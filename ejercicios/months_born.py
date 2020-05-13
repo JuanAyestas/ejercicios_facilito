@@ -11,7 +11,7 @@ def full_date(number):
   print("It's been {} years, {} months, y {} days since you were born.".format(
       años, meses, dias))
   detalle = input("""  If you want to know how old are you in months, weeks or days...
-    Enter 'months', 'weeks' or 'days'\n""")
+  Enter 'months', 'weeks' or 'days'\n""")
   while (detalle != "end" and detalle != "End"):
     if detalle == "months" or detalle == "Months":
       mes_total = (años * 12 + (now.month - mes))

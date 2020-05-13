@@ -5,7 +5,6 @@ from datetime import date, datetime, timedelta
 #month = week * 4.34
 #year = month * 12
 
-
 def full_date(number):
   años = (abs(now.year - año - number))
   meses = (abs(now.month - mes))
@@ -13,7 +12,7 @@ def full_date(number):
   print("Han transcurrido {} años, {} meses, y {} días desde su nacimiento".format(
       años, meses, dias))
   detalle = input("""  Si quiere saber su edad completa en meses, semanas o días...
-    Ingrese 'meses', 'semanas' o 'dias'\n""")
+  Ingrese 'meses', 'semanas' o 'dias'\n""")
   while (detalle != "Terminar" and detalle != "terminar"):
     if detalle == "meses" or detalle == "Meses":
       mes_total = (años * 12 + (now.month - mes))
@@ -27,7 +26,6 @@ def full_date(number):
     else:
       print("Revise si ingresó correctamente la opción e inténtelo de nuevo.")
     detalle = input("  Ingrese 'meses', 'semanas', 'dias' o 'terminar' para finalizar\n")
-
 
 def current_date_format(date):
     months = ("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
