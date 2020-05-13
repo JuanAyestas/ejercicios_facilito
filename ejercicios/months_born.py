@@ -14,7 +14,7 @@ def full_date(number):
   Enter 'months', 'weeks' or 'days'\n""")
   while (detalle != "end" and detalle != "End"):
     if detalle == "months" or detalle == "Months":
-      mes_total = (años * 12 + (now.month - mes))
+      mes_total = (round((años * 12 + (now.month - mes)), 1))
       print("In total, your age is {} months old".format(mes_total))
     elif detalle == "weeks" or detalle == "Weeks":
       semanas_total = (round((años * 12 + (now.month - mes)) * 52, 1))
