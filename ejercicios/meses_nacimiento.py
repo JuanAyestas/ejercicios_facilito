@@ -5,8 +5,8 @@ from datetime import date, datetime, timedelta
 #month = week * 4.34
 #year = month * 12
 
-def full_date(number):
-  años = (abs(now.year - año - number))
+def full_date(numero):
+  años = (round(abs(now.year - año - (numero * 0.083)), 1))
   meses = (abs(now.month - mes))
   dias = (abs(now.day - dia))
   print("Han transcurrido {} años, {} meses, y {} días desde su nacimiento".format(
@@ -18,10 +18,10 @@ def full_date(number):
       mes_total = (años * 12 + (now.month - mes))
       print("En total, su edad es de {} meses".format(mes_total))
     elif detalle == "semanas" or detalle == "Semanas":
-      semanas_total = (round((años * 12 + (now.month - mes)) * 52, 2))
+      semanas_total = (round((años * 12 + (now.month - mes)) * 52, 1))
       print("En total, su edad es de {} semanas".format(semanas_total))
     elif detalle == "dias" or detalle == "Dias":
-      dias_total = (round(((años * 12 + (now.month - mes)) * 52) * 7.024, 2))
+      dias_total = (round(((años * 12 + (now.month - mes)) * 52) * 7.024, 1))
       print("En total, su edad es de {} días".format(dias_total))
     else:
       print("Revise si ingresó correctamente la opción e inténtelo de nuevo.")
@@ -52,12 +52,10 @@ if año >= 1900:
     if dia <= 31 and dia >=1:
       date = datetime(año, mes, dia)
       print("Nació el {}".format(current_date_format(date)))
-      if mes >= now.month:
-        if dia >= now.day or dia <= now.day:
-          full_date(1)
+      if mes > now.month:
+        full_date(mes)
       elif mes <= now.month:
-        if dia <= now.day or dia >= now.day:
-          full_date(0)
+        full_date(0)
     else:
       print("Revise si ingresó correctamente los números e inténtelo de nuevo.")
   else:

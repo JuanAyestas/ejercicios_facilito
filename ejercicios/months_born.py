@@ -5,7 +5,7 @@ from datetime import date, datetime, timedelta
 #year = month * 12
 
 def full_date(number):
-  años = (abs(now.year - año - number))
+  años = (round(abs(now.year - año - (number * 0.083 )), 1))
   meses = (abs(now.month - mes))
   dias = (abs(now.day - dia))
   print("It's been {} years, {} months, y {} days since you were born.".format(
@@ -17,10 +17,10 @@ def full_date(number):
       mes_total = (años * 12 + (now.month - mes))
       print("In total, your age is {} months old".format(mes_total))
     elif detalle == "weeks" or detalle == "Weeks":
-      semanas_total = (round((años * 12 + (now.month - mes)) * 52, 2))
+      semanas_total = (round((años * 12 + (now.month - mes)) * 52, 1))
       print("In total, your age is {} weeks old".format(semanas_total))
     elif detalle == "days" or detalle == "Days":
-      dias_total = (round(((años * 12 + (now.month - mes)) * 52) * 7.024, 2))
+      dias_total = (round(((años * 12 + (now.month - mes)) * 52) * 7.024, 1))
       print("In total, your age is {} days old".format(dias_total))
     else:
       print("Check if you entered the right input, then try again.")
@@ -51,12 +51,10 @@ if año >= 1900:
     if dia <= 31 and dia >= 1:
       date = datetime(año, mes, dia)
       print("You were born in {}".format(current_date_format(date)))
-      if mes >= now.month:
-        if dia >= now.day or dia <= now.day:
-          full_date(1)
+      if mes > now.month:
+        full_date(mes)
       elif mes <= now.month:
-        if dia <= now.day or dia >= now.day: 
-          full_date(0)
+        full_date(0)
     else:
       print("Check if you entered a valid number, then try again.")
   else:
