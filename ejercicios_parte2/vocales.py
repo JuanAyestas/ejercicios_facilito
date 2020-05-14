@@ -1,14 +1,12 @@
-def vocal_count(string, vowels):
-    string = string.casefold()
-    count = {}.fromkeys(vowels, 0)
-    for character in string:
-        if character in count:
-            count[character] += 1
-    keys = list(count.keys())
-    values = list(count.values())
-    print("Se repitió la vocal: {} {} veces.".format(keys,values))
-    return count
+#Mostrar en pantalla la frecuencia de aparición de vocales en una frase dada por el usuario.
+VOCALES = ["a","e","i","o","u"]
+contador = 0
 
-vocales = 'aeiou'
-oracion = str(input("Ingrese una oración: "))
-print(vocal_count(oracion, vocales))
+oracion = str(input("Ingrese una oracion:\n"))
+oracion_minus = oracion.lower()
+
+for letra in oracion_minus:
+  if letra in VOCALES:
+    contador +=1
+
+print("La cantidad de vocales en la oracion es: {}".format(contador))

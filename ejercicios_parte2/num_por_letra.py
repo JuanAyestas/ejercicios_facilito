@@ -6,8 +6,7 @@ def alphabet_position(text):
 
   return ''.join(numbers)
 
-LETRAS = {letter: str(index)
-           for index, letter in enumerate(ascii_lowercase, start=1)}
+LETRAS = {letter: str(index) for index, letter in enumerate(ascii_lowercase, start=1)}
 
 oracion = str(input("Ingrese una oración o palabra\n"))
 resultado = alphabet_position(oracion)
