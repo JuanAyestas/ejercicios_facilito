@@ -25,6 +25,8 @@ def full_date(number):
     else:
       print("Check if you entered the right input, then try again.")
     detalle = input("  Enter 'months', 'weeks', 'days' or 'end' to finish.\n")
+  else:
+    print("The app has finished.")
 
 def current_date_format(date):
     months = ("January", "February", "March", "April", "May", "June", "July",
